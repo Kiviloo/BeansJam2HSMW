@@ -40,7 +40,10 @@ public class stayTrigger : MonoBehaviour {
     private Points _highscoreScript;
 
     public Text keyText;
-   
+
+    public int Leben = 3;
+    public GameObject[] hearts;
+
     void Start()
     {
         List<int> allNumbers = new List<int>();
@@ -361,30 +364,69 @@ public class stayTrigger : MonoBehaviour {
         {
             ballCount--;
             ballIn = false;
+
+            FallDown(other);
         }
 
         if (other.tag == "Knife")
         {
             knifeCount--;
             knifeIn = false;
+
+            FallDown(other);
         }
 
         if (other.tag == "Torch")
         {
             torchCount--;
             torchIn = false;
+
+            FallDown(other);
         }
 
         if (other.tag == "RBTV")
         {
             rbtvCount--;
             rbtvIn = false;
+
+            FallDown(other);
         }
 
         if (other.tag == "Raccoon")
         {
             raccoonCount--;
             raccoonIn = false;
+
+            FallDown(other);
+        }
+    }
+
+    void FallDown(Collider2D other)
+    {
+        if (ballClickCount > ballCount)
+        {
+            Rigidbody2D body = other.attachedRigidbody;
+            body.bodyType = RigidbodyType2D.Dynamic;
+        }
+        if (knifeClickCount > knifeCount)
+        {
+            Rigidbody2D body = other.attachedRigidbody;
+            body.bodyType = RigidbodyType2D.Dynamic;
+        }
+        if (torchClickCount > torchCount)
+        {
+            Rigidbody2D body = other.attachedRigidbody;
+            body.bodyType = RigidbodyType2D.Dynamic;
+        }
+        if (rbtvClickCount > rbtvCount)
+        {
+            Rigidbody2D body = other.attachedRigidbody;
+            body.bodyType = RigidbodyType2D.Dynamic;
+        }
+        if (raccoonClickCount > raccoonCount)
+        {
+            Rigidbody2D body = other.attachedRigidbody;
+            body.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
@@ -393,28 +435,47 @@ public class stayTrigger : MonoBehaviour {
         if (ballClickCount > ballCount)
         {
             ballClickCount--;
+            MinusLeben();
         }
         if (knifeClickCount > knifeCount)
         {
             knifeClickCount--;
+            MinusLeben();
         }
         if (torchClickCount > torchCount)
         {
             torchClickCount--;
+            MinusLeben();
         }
         if (rbtvClickCount > rbtvCount)
         {
             rbtvClickCount--;
+            MinusLeben();
         }
         if (raccoonClickCount > raccoonCount)
         {
             raccoonClickCount--;
+            MinusLeben();
         }
 
         if (ballCount == 0 && knifeCount == 0 && torchCount == 0 && rbtvCount == 0 && raccoonCount == 0)
         {
             keyText.text = "";
         }
+
+
+    }
+
+    public void MinusLeben()
+    {
+        if (Leben <= 0)
+        {
+            Debug.Log("Load DeathScreen!");
+        }
+        Leben--;
+
+        hearts[Leben].SetActive(false);
+
     }
 
     public void OnTriggerStay2D(Collider2D other)
