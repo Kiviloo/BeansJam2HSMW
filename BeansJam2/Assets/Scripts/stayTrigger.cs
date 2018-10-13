@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class stayTrigger : MonoBehaviour {
 
@@ -38,15 +39,281 @@ public class stayTrigger : MonoBehaviour {
     public GameObject scripts;
     private Points _highscoreScript;
 
+    public Text keyText;
+   
     void Start()
     {
-        ballKey = 0; //Random.Range(0, 12);
-        knifeKey = 1; //Random.Range(0, 12);
-        torchKey = 2; //Random.Range(0, 12);
-        rbtvKey = 3; //Random.Range(0, 12);
-        raccoonKey = 4; //Random.Range(0, 12);
+        List<int> allNumbers = new List<int>();
+
+        for (int x = 0; x < 5; x++)
+        {
+            int ranNum = Random.Range(0, 11);
+            
+            while (allNumbers.Contains(ranNum))
+            {
+                ranNum = Random.Range(0, 11);
+            }
+
+            allNumbers.Add(ranNum);
+
+            if (x == 0)
+            {
+                ballKey = ranNum;
+            }
+            if (x == 1)
+            {
+                knifeKey = ranNum;
+            }
+            if (x == 2)
+            {
+                torchKey = ranNum;
+            }
+            if (x == 3)
+            {
+                rbtvKey = ranNum;
+            }
+            if (x == 4)
+            {
+                raccoonKey = ranNum;
+            }
+        }
 
         _highscoreScript = scripts.GetComponent<Points>();
+        keyText.text = " ";
+    }
+
+    public void TextEnter(int objectT)
+    {
+        switch (objectT)
+        {
+            case 0:
+                switch (ballKey)
+                {
+                    case 0:
+                        keyText.text = keyText.text + "R";
+                        break;
+                    case 1:
+                        keyText.text = keyText.text + "G";
+                        break;
+                    case 2:
+                        keyText.text = keyText.text + "B";
+                        break;
+                    case 3:
+                        keyText.text = keyText.text + "H";
+                        break;
+                    case 4:
+                        keyText.text = keyText.text + "U";
+                        break;
+                    case 5:
+                        keyText.text = keyText.text + "J";
+                        break;
+                    case 6:
+                        keyText.text = keyText.text + "M";
+                        break;
+                    case 7:
+                        keyText.text = keyText.text + "K";
+                        break;
+                    case 8:
+                        keyText.text = keyText.text + "O";
+                        break;
+                    case 9:
+                        keyText.text = keyText.text + "L";
+                        break;
+                    case 10:
+                        keyText.text = keyText.text + "P";
+                        break;
+                }
+                break;
+
+            case 1:
+                switch (knifeKey)
+                {
+                    case 0:
+                        keyText.text = keyText.text + "R";
+                        break;
+                    case 1:
+                        keyText.text = keyText.text + "G";
+                        break;
+                    case 2:
+                        keyText.text = keyText.text + "B";
+                        break;
+                    case 3:
+                        keyText.text = keyText.text + "H";
+                        break;
+                    case 4:
+                        keyText.text = keyText.text + "U";
+                        break;
+                    case 5:
+                        keyText.text = keyText.text + "J";
+                        break;
+                    case 6:
+                        keyText.text = keyText.text + "M";
+                        break;
+                    case 7:
+                        keyText.text = keyText.text + "K";
+                        break;
+                    case 8:
+                        keyText.text = keyText.text + "O";
+                        break;
+                    case 9:
+                        keyText.text = keyText.text + "L";
+                        break;
+                    case 10:
+                        keyText.text = keyText.text + "P";
+                        break;
+                }
+                break;
+
+            case 2:
+                switch (torchKey)
+                {
+                    case 0:
+                        keyText.text = keyText.text + "R";
+                        break;
+                    case 1:
+                        keyText.text = keyText.text + "G";
+                        break;
+                    case 2:
+                        keyText.text = keyText.text + "B";
+                        break;
+                    case 3:
+                        keyText.text = keyText.text + "H";
+                        break;
+                    case 4:
+                        keyText.text = keyText.text + "U";
+                        break;
+                    case 5:
+                        keyText.text = keyText.text + "J";
+                        break;
+                    case 6:
+                        keyText.text = keyText.text + "M";
+                        break;
+                    case 7:
+                        keyText.text = keyText.text + "K";
+                        break;
+                    case 8:
+                        keyText.text = keyText.text + "O";
+                        break;
+                    case 9:
+                        keyText.text = keyText.text + "L";
+                        break;
+                    case 10:
+                        keyText.text = keyText.text + "P";
+                        break;
+                }
+                break;
+
+            case 3:
+                switch (rbtvKey)
+                {
+                    case 0:
+                        keyText.text = keyText.text + "R";
+                        break;
+                    case 1:
+                        keyText.text = keyText.text + "G";
+                        break;
+                    case 2:
+                        keyText.text = keyText.text + "B";
+                        break;
+                    case 3:
+                        keyText.text = keyText.text + "H";
+                        break;
+                    case 4:
+                        keyText.text = keyText.text + "U";
+                        break;
+                    case 5:
+                        keyText.text = keyText.text + "J";
+                        break;
+                    case 6:
+                        keyText.text = keyText.text + "M";
+                        break;
+                    case 7:
+                        keyText.text = keyText.text + "K";
+                        break;
+                    case 8:
+                        keyText.text = keyText.text + "O";
+                        break;
+                    case 9:
+                        keyText.text = keyText.text + "L";
+                        break;
+                    case 10:
+                        keyText.text = keyText.text + "P";
+                        break;
+                }
+                break;
+
+            case 4:
+                switch (raccoonKey)
+                {
+                    case 0:
+                        keyText.text = keyText.text + "R";
+                        break;
+                    case 1:
+                        keyText.text = keyText.text + "G";
+                        break;
+                    case 2:
+                        keyText.text = keyText.text + "B";
+                        break;
+                    case 3:
+                        keyText.text = keyText.text + "H";
+                        break;
+                    case 4:
+                        keyText.text = keyText.text + "U";
+                        break;
+                    case 5:
+                        keyText.text = keyText.text + "J";
+                        break;
+                    case 6:
+                        keyText.text = keyText.text + "M";
+                        break;
+                    case 7:
+                        keyText.text = keyText.text + "K";
+                        break;
+                    case 8:
+                        keyText.text = keyText.text + "O";
+                        break;
+                    case 9:
+                        keyText.text = keyText.text + "L";
+                        break;
+                    case 10:
+                        keyText.text = keyText.text + "P";
+                        break;
+                }
+                break;
+        }
+    }
+
+    public void TextExit()
+    {
+        string tmp = keyText.text;
+        if (keyText.text.Length != 0)
+        {
+            tmp = tmp.Substring(1, tmp.Length - 1);
+            keyText.text = tmp;
+        }
+        
+    }
+
+    public void TextExitCertain(char wanted)
+    {
+        List<char> needed = new List<char>();
+
+        for (int x = 0; x < keyText.text.Length; x++)
+        {
+            needed.Add(keyText.text[x]);
+        }
+
+        for (int i = 0; i < keyText.text.Length; i++)
+        {
+            if (wanted.Equals(needed[i]))
+            {
+                needed.Remove(needed[i]);
+            }
+        }
+
+        string newstr = new string(needed.ToArray());
+
+        keyText.text = newstr;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -55,35 +322,41 @@ public class stayTrigger : MonoBehaviour {
         {
             ballCount++;
             ballClickCount++;
+            TextEnter(0);
         }
 
         if (other.tag == "Knife")
         {
             knifeCount++;
             knifeClickCount++;
+            TextEnter(1);
         }
 
         if (other.tag == "Torch")
         {
             torchCount++;
             torchClickCount++;
+            TextEnter(2);
         }
 
         if (other.tag == "RBTV")
         {
             rbtvCount++;
             rbtvClickCount++;
+            TextEnter(3);
         }
 
         if (other.tag == "Raccoon")
         {
             raccoonCount++;
             raccoonClickCount++;
+            TextEnter(4);
         }
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
+        TextExit();
         if (other.tag == "Ball")
         {
             ballCount--;
@@ -120,27 +393,27 @@ public class stayTrigger : MonoBehaviour {
         if (ballClickCount > ballCount)
         {
             ballClickCount--;
-            Debug.Log("Verkackt!");
         }
         if (knifeClickCount > knifeCount)
         {
             knifeClickCount--;
-            Debug.Log("Verkackt!");
         }
         if (torchClickCount > torchCount)
         {
             torchClickCount--;
-            Debug.Log("Verkackt!");
         }
         if (rbtvClickCount > rbtvCount)
         {
             rbtvClickCount--;
-            Debug.Log("Verkackt!");
         }
         if (raccoonClickCount > raccoonCount)
         {
             raccoonClickCount--;
-            Debug.Log("Verkackt!");
+        }
+
+        if (ballCount == 0 && knifeCount == 0 && torchCount == 0 && rbtvCount == 0 && raccoonCount == 0)
+        {
+            keyText.text = "";
         }
     }
 
@@ -156,6 +429,7 @@ public class stayTrigger : MonoBehaviour {
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('R');
                     }
                     break;
                 case 1:
@@ -163,76 +437,79 @@ public class stayTrigger : MonoBehaviour {
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('G');
                     }
                     break;
-                case 3:
+                case 2:
                     if (Input.GetKeyDown(KeyCode.B) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('B');
                     }
                     break;
-                case 4:
+                case 3:
                     if (Input.GetKeyDown(KeyCode.H) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('H');
                     }
                     break;
-                case 5:
+                case 4:
                     if (Input.GetKeyDown(KeyCode.U) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('U');
                     }
                     break;
-                case 6:
+                case 5:
                     if (Input.GetKeyDown(KeyCode.J) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('J');
                     }
                     break;
-                case 7:
+                case 6:
                     if (Input.GetKeyDown(KeyCode.M) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('M');
                     }
                     break;
-                case 8:
+                case 7:
                     if (Input.GetKeyDown(KeyCode.K) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('K');
                     }
                     break;
-                case 9:
+                case 8:
                     if (Input.GetKeyDown(KeyCode.O) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('O');
                     }
                     break;
-                case 10:
+                case 9:
                     if (Input.GetKeyDown(KeyCode.L) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('L');
                     }
                     break;
-                case 11:
+                case 10:
                     if (Input.GetKeyDown(KeyCode.P) && ballClickCount > 0)
                     {
                         ballClickCount--;
                         _highscoreScript.SetPoints(ballPoints);
-                    }
-                    break;
-                case 12:
-                    if (Input.GetKeyDown(KeyCode.Delete) && ballClickCount > 0)
-                    {
-                        ballClickCount--;
-                        _highscoreScript.SetPoints(ballPoints);
+                        TextExitCertain('P');
                     }
                     break;
             }
@@ -248,6 +525,7 @@ public class stayTrigger : MonoBehaviour {
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('R');
                     }
                     break;
                 case 1:
@@ -255,82 +533,85 @@ public class stayTrigger : MonoBehaviour {
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('G');
                     }
                     break;
-                case 3:
+                case 2:
                     if (Input.GetKeyDown(KeyCode.B) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('B');
                     }
                     break;
-                case 4:
+                case 3:
                     if (Input.GetKeyDown(KeyCode.H) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('H');
                     }
                     break;
-                case 5:
+                case 4:
                     if (Input.GetKeyDown(KeyCode.U) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('U');
                     }
                     break;
-                case 6:
+                case 5:
                     if (Input.GetKeyDown(KeyCode.J) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('J');
                     }
                     break;
-                case 7:
+                case 6:
                     if (Input.GetKeyDown(KeyCode.M) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('M');
                     }
                     break;
-                case 8:
+                case 7:
                     if (Input.GetKeyDown(KeyCode.K) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('K');
                     }
                     break;
-                case 9:
+                case 8:
                     if (Input.GetKeyDown(KeyCode.O) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('O');
                     }
                     break;
-                case 10:
+                case 9:
                     if (Input.GetKeyDown(KeyCode.L) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('L');
                     }
                     break;
-                case 11:
+                case 10:
                     if (Input.GetKeyDown(KeyCode.P) && knifeClickCount > 0)
                     {
                         knifeClickCount--;
                         _highscoreScript.SetPoints(knifePoints);
-                    }
-                    break;
-                case 12:
-                    if (Input.GetKeyDown(KeyCode.Delete) && knifeClickCount > 0)
-                    {
-                        knifeClickCount--;
-                        _highscoreScript.SetPoints(knifePoints);
+                        TextExitCertain('P');
                     }
                     break;
             }
         }
 
-        if (other.tag == "torch")
+        if (other.tag == "Torch")
         {
             torchIn = true;
             switch (torchKey)
@@ -340,6 +621,7 @@ public class stayTrigger : MonoBehaviour {
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('R');
                     }
                     break;
                 case 1:
@@ -347,76 +629,79 @@ public class stayTrigger : MonoBehaviour {
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('G');
                     }
                     break;
-                case 3:
+                case 2:
                     if (Input.GetKeyDown(KeyCode.B) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('B');
                     }
                     break;
-                case 4:
+                case 3:
                     if (Input.GetKeyDown(KeyCode.H) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('H');
                     }
                     break;
-                case 5:
+                case 4:
                     if (Input.GetKeyDown(KeyCode.U) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('U');
                     }
                     break;
-                case 6:
+                case 5:
                     if (Input.GetKeyDown(KeyCode.J) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('J');
                     }
                     break;
-                case 7:
+                case 6:
                     if (Input.GetKeyDown(KeyCode.M) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('M');
                     }
                     break;
-                case 8:
+                case 7:
                     if (Input.GetKeyDown(KeyCode.K) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('K');
                     }
                     break;
-                case 9:
+                case 8:
                     if (Input.GetKeyDown(KeyCode.O) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('O');
                     }
                     break;
-                case 10:
+                case 9:
                     if (Input.GetKeyDown(KeyCode.L) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('L');
                     }
                     break;
-                case 11:
+                case 10:
                     if (Input.GetKeyDown(KeyCode.P) && torchClickCount > 0)
                     {
                         torchClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
-                    }
-                    break;
-                case 12:
-                    if (Input.GetKeyDown(KeyCode.Delete) && torchClickCount > 0)
-                    {
-                        torchClickCount--;
-                        _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('P');
                     }
                     break;
             }
@@ -432,6 +717,7 @@ public class stayTrigger : MonoBehaviour {
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('R');
                     }
                     break;
                 case 1:
@@ -439,76 +725,79 @@ public class stayTrigger : MonoBehaviour {
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('G');
                     }
                     break;
-                case 3:
+                case 2:
                     if (Input.GetKeyDown(KeyCode.B) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('B');
                     }
                     break;
-                case 4:
+                case 3:
                     if (Input.GetKeyDown(KeyCode.H) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('H');
                     }
                     break;
-                case 5:
+                case 4:
                     if (Input.GetKeyDown(KeyCode.U) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('U');
                     }
                     break;
-                case 6:
+                case 5:
                     if (Input.GetKeyDown(KeyCode.J) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('J');
                     }
                     break;
-                case 7:
+                case 6:
                     if (Input.GetKeyDown(KeyCode.M) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
+                        _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('M');
                     }
-                    _highscoreScript.SetPoints(torchPoints);
                     break;
-                case 8:
+                case 7:
                     if (Input.GetKeyDown(KeyCode.K) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('K');
                     }
                     break;
-                case 9:
+                case 8:
                     if (Input.GetKeyDown(KeyCode.O) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('O');
                     }
                     break;
-                case 10:
+                case 9:
                     if (Input.GetKeyDown(KeyCode.L) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('L');
                     }
                     break;
-                case 11:
+                case 10:
                     if (Input.GetKeyDown(KeyCode.P) && rbtvClickCount > 0)
                     {
                         rbtvClickCount--;
                         _highscoreScript.SetPoints(torchPoints);
-                    }
-                    break;
-                case 12:
-                    if (Input.GetKeyDown(KeyCode.Delete) && rbtvClickCount > 0)
-                    {
-                        rbtvClickCount--;
-                        _highscoreScript.SetPoints(torchPoints);
+                        TextExitCertain('P');
                     }
                     break;
             }
@@ -524,6 +813,7 @@ public class stayTrigger : MonoBehaviour {
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('R');
                     }
                     break;
                 case 1:
@@ -531,76 +821,79 @@ public class stayTrigger : MonoBehaviour {
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('G');
                     }
                     break;
-                case 3:
+                case 2:
                     if (Input.GetKeyDown(KeyCode.B) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('B');
                     }
                     break;
-                case 4:
+                case 3:
                     if (Input.GetKeyDown(KeyCode.H) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('H');
                     }
                     break;
-                case 5:
+                case 4:
                     if (Input.GetKeyDown(KeyCode.U) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('U');
                     }
                     break;
-                case 6:
+                case 5:
                     if (Input.GetKeyDown(KeyCode.J) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('J');
                     }
                     break;
-                case 7:
+                case 6:
                     if (Input.GetKeyDown(KeyCode.M) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('M');
                     }
                     break;
-                case 8:
+                case 7:
                     if (Input.GetKeyDown(KeyCode.K) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('K');
                     }
                     break;
-                case 9:
+                case 8:
                     if (Input.GetKeyDown(KeyCode.O) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('O');
                     }
                     break;
-                case 10:
+                case 9:
                     if (Input.GetKeyDown(KeyCode.L) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('L');
                     }
                     break;
-                case 11:
+                case 10:
                     if (Input.GetKeyDown(KeyCode.P) && raccoonClickCount > 0)
                     {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
-                    }
-                    break;
-                case 12:
-                    if (Input.GetKeyDown(KeyCode.Delete) && raccoonClickCount > 0)
-                    {
-                        raccoonClickCount--;
-                        _highscoreScript.SetPoints(raccoonPoints);
+                        TextExitCertain('P');
                     }
                     break;
             }
