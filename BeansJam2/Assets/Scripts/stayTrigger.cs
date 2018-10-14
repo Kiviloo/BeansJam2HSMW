@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -470,7 +471,7 @@ public class stayTrigger : MonoBehaviour {
     {
         if (Leben <= 0)
         {
-            Debug.Log("Load DeathScreen!");
+            SceneManager.LoadScene("DeathScreen");
         }
         Leben--;
 
