@@ -20,7 +20,7 @@ public class balancemovement : MonoBehaviour {
 
     private void Update()
     {
-      if (Stopper.transform.rotation.eulerAngles.z >= 177)
+      if (Stopper.transform.rotation.eulerAngles.z >= 176)
         {
             name.enabled = true;
             this.enabled = false;
