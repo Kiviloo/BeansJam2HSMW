@@ -7,6 +7,8 @@ public class Points : MonoBehaviour {
 
     public Text scoreText;
     public int highscore = 000000;
+    public AudioSource source;
+    public AudioClip sound;
 
 	void Start () {
 
@@ -17,10 +19,16 @@ public class Points : MonoBehaviour {
     {
         highscore = highscore + addition;
         UpdatePoints();
+
+        source.volume = 0.5f;
+        source.clip = sound;
+        source.Play();
     }
 
     void UpdatePoints()
     {
         scoreText.text = highscore.ToString();
     }
+
+
 }

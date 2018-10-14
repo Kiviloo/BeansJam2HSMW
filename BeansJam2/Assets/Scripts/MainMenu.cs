@@ -6,18 +6,35 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    public AudioSource source;
+
 	public void OnStart()
     {
-        SceneManager.LoadScene("Ingame"); // SceneManager.LoadScene("Game");
+        source.Play();
+        StartCoroutine(StartWait());
     }
 
     public void OnCredits()
     {
+        source.Play();
+        StartCoroutine(CreditWait());
+    }
+
+    IEnumerator StartWait()
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene("Ingame");
+    }
+
+    IEnumerator CreditWait()
+    {
+        yield return new WaitForSeconds(0.2f);
         SceneManager.LoadScene("Credits");
     }
 
     public void OnQuit()
     {
+        source.Play();
         Application.Quit();
     }
 }

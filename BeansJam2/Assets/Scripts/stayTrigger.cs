@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class stayTrigger : MonoBehaviour {
 
@@ -44,6 +44,11 @@ public class stayTrigger : MonoBehaviour {
 
     public int Leben = 3;
     public GameObject[] hearts;
+
+    public AudioSource source1;
+    public AudioSource source2;
+    public AudioClip verkackt;
+    public AudioClip vieh;
 
     void Start()
     {
@@ -477,6 +482,10 @@ public class stayTrigger : MonoBehaviour {
 
         hearts[Leben].SetActive(false);
 
+        source1.volume = 1f;
+        source1.clip = verkackt;
+        source1.Play();
+
     }
 
     public void OnTriggerStay2D(Collider2D other)
@@ -876,6 +885,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('R');
+                        source2.Play();
                     }
                     break;
                 case 1:
@@ -884,6 +894,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('G');
+                        source2.Play();
                     }
                     break;
                 case 2:
@@ -892,6 +903,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('B');
+                        source2.Play();
                     }
                     break;
                 case 3:
@@ -900,6 +912,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('H');
+                        source2.Play();
                     }
                     break;
                 case 4:
@@ -908,6 +921,8 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('U');
+                        source2.Play();
+
                     }
                     break;
                 case 5:
@@ -916,6 +931,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('J');
+                        source2.Play();
                     }
                     break;
                 case 6:
@@ -924,6 +940,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('M');
+                        source2.Play();
                     }
                     break;
                 case 7:
@@ -932,6 +949,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('K');
+                        source2.Play();
                     }
                     break;
                 case 8:
@@ -940,6 +958,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('O');
+                        source2.Play();
                     }
                     break;
                 case 9:
@@ -948,6 +967,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('L');
+                        source2.Play();
                     }
                     break;
                 case 10:
@@ -956,6 +976,7 @@ public class stayTrigger : MonoBehaviour {
                         raccoonClickCount--;
                         _highscoreScript.SetPoints(raccoonPoints);
                         TextExitCertain('P');
+                        source2.Play();
                     }
                     break;
             }
